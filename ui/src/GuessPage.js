@@ -15,9 +15,8 @@ function GuessPage() {
     const [mockData, setMockData] = useState([]);
 
 useEffect(() => {
-    console.log([...data].sort((a, b) => (parseInt(a.percent) < parseInt(b.percent)) ? 1 : -1));
+    setMockData([...data].sort((a, b) => (parseInt(a.percent) < parseInt(b.percent)) ? 1 : -1));
 }, [])
-
 
   return (
     <div style={{ backgroundColor: "#303030", height: "100vh", padding: 20 }}>
@@ -60,11 +59,7 @@ useEffect(() => {
                 }}>
 
             </TextField>
-            <CustomBar percent="50%" word="deneme1"></CustomBar>
-            <CustomBar percent="30%" word="deneme2"></CustomBar>
-            <CustomBar percent="75%" word="deneme3"></CustomBar>
-            <CustomBar percent="50%" word="deneme4"></CustomBar>
-            <CustomBar percent="100%" word="deneme5"></CustomBar>
+            {mockData.map((elem, index) => (<CustomBar percent={elem.percent + "%"} word={elem.word} key={index}></CustomBar>))}
         </Grid>
     </div>
   )
