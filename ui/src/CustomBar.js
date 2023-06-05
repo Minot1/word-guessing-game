@@ -2,12 +2,14 @@ import React from 'react'
 
 function CustomBar(props) {
 
+  const { percent, word } = props;
+
     const outerBarStyle = {
-      height: 50,
-      width: 401,
+      height: 40,
+      width: 301,
       backgroundColor: "black",
       borderRadius: 20,
-      margin: 20,
+      margin: 10,
       position: "relative",
       display: "flex",
       justifyContent: "center",
@@ -17,7 +19,7 @@ function CustomBar(props) {
     const innerBarStyle = {
         height: "100%",
         borderRadius: "inherit",
-        width: 200,
+        width: percent ?? "0%",
         backgroundColor: "green",
         position: "absolute",
         left: 0,
@@ -34,7 +36,7 @@ function CustomBar(props) {
 
         </div>
         <div style={textStyle}>
-            Deneme
+            {word}
         </div>
     </div>
   )
