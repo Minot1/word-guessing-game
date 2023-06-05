@@ -1,15 +1,15 @@
 import CustomBar from './CustomBar';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import GuessPage from './GuessPage';
 
 function App() {
   return (
-    <div className="App">
-      <CustomBar percent="50%" word="deneme1"></CustomBar>
-      <CustomBar percent="30%" word="deneme2"></CustomBar>
-      <CustomBar percent="75%" word="deneme3"></CustomBar>
-      <CustomBar percent="50%" word="deneme4"></CustomBar>
-      <CustomBar percent="100%" word="deneme5"></CustomBar>
-    </div>
+    <Routes>
+      <Route path='*' element={<GuessPage></GuessPage>}></Route>
+      <Route path='/guess' element={<GuessPage></GuessPage>}></Route>
+
+    </Routes>
   );
 }
 

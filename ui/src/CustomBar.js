@@ -6,7 +6,7 @@ function CustomBar(props) {
 
     const outerBarStyle = {
       height: 40,
-      width: 301,
+      width: 501,
       backgroundColor: "black",
       borderRadius: 20,
       margin: 10,
